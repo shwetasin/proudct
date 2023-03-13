@@ -1,0 +1,39 @@
+ion-grid{
+    ion-row{
+      ion-col{
+        ion-card{
+          height: 280px;
+          img src {
+            height: 6px;
+            width: 6px;
+            
+          }
+          ion-card-header{
+            ion-list{
+              ion-item{
+                --background:tranparent;
+                 height: 6px;
+                 width: 6px;
+                 
+              }
+              .content {
+                display: flex;
+                  justify-content: space-between; 
+              }
+            }
+          }
+        }
+      }
+    }
+  
+  }
+  
+  
+  
+  ion-text{
+    font-size: 14px !important;
+   }
+   ion-icon{
+    font-size: 30px !important;
+    
+   }

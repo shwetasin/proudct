@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categories</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" text="" icon="home" ></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-chip (click)="singlecategory(categories)" *ngFor="let categories of categoriesList">{{categories}}</ion-chip>
+</ion-content>

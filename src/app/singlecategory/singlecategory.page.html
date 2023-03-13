@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SingleCategory</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/categories" text="Back"  ></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row size ="6">
+      <ion-col size="6" size-md="10" size-lg="8" size-xl="6"*ngFor="let categories of singlecategoriesdata" >
+        <ion-card (click)="goToProductDetails(categories.id)">
+          <img src={{categories.thumbnail}}/>
+            <ion-list lines="full">
+              <ion-item class="content">
+                <ion-text>{{categories.title}}</ion-text>
+                <ion-text>{{categories.brand}}</ion-text>
+              </ion-item>
+              <ion-item>
+                <ion-text>{{categories.price}}</ion-text>
+                <ion-text>{{categories.discountPercentage}}</ion-text>
+              </ion-item>
+              <ion-item>
+                <ion-text><ion-icon name='star-half'></ion-icon>{{categories.rating}}</ion-text>
+                <ion-text>{{categories.category}} </ion-text>
+              </ion-item>
+            </ion-list>
+        </ion-card>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

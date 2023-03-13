@@ -1,0 +1,47 @@
+<ion-header color='primary'>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <h1 class="ion-text-center">
+      <b>Product Details</b>
+    </h1>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+<ion-grid>
+  <ion-row>
+    <ion-col size ="12">
+      <ion-card>
+        <img src={{productList?.thumbnail}}/>
+      </ion-card>
+      <ion-slides  autoplay="5000" loop="true" speed="300" pager="true" >
+      <ion-slide *ngFor="let img of productList?.images">
+        <img src={{img}}/>
+      </ion-slide>
+      </ion-slides>
+        <ion-list>
+          <ion-item class="content">
+            <ion-label>{{productList?.title}}</ion-label>
+            <ion-label>{{productList?.brand}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-text>{{productList?.price}}</ion-text>
+            <ion-text>{{productList?.discountPercentage}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name='star-half'></ion-icon>{{productList?.rating}}</ion-label>
+            <ion-label>{{productList?.category}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label> {{productList?.stock}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{productList?.description}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+  </ion-row>
+  <div class="ion-text-center">
+    <ion-button size="large" color="danger" (click)="Addtocart(productList.id)" type="Add" ><b>ADD TO CART</b></ion-button>
+</div>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cart</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card   (click)="goToCartDetails(carts)" *ngFor="let carts of cartsdata">
+    <ion-card-header >
+      <ion-label>
+        <ion-item>
+          <ion-text><b>I :{{carts.quantity}}</b></ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text><b>{{carts.title}}</b></ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text><b>Price :{{carts.price}}</b></ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text><b>Quantity :{{carts.quantity}}</b></ion-text>
+        </ion-item>
+      </ion-label>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

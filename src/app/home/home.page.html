@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <h1 class="ion-text-center">
+        <b>Product</b>
+      </h1>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="content">
+  <ion-searchbar (change)="onChange($event)"></ion-searchbar>
+  <ion-icon slot="end" (click)="filter()" name="funnel-outline" [routerLink]="['/categories']"></ion-icon>
+  <ion-icon   slot="end"(click)="cart()"name="cart" ></ion-icon>
+</ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+<ion-grid>
+  <ion-row size ="6">
+    <ion-col size="6" size-md="10" size-lg="8" size-xl="6"*ngFor="let product of productList" >
+      <ion-card (click)="routeclick(product)">
+        <img src={{product.thumbnail}}/>
+          <ion-list lines="full">
+            <ion-item class="content">
+              <ion-text>{{product.title}}</ion-text>
+              <ion-text>{{product.brand}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>{{product.price}}</ion-text>
+              <ion-text>{{product.discountPercentage}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text><ion-icon name='star-half'></ion-icon>{{product.rating}}</ion-text>
+              <ion-text>{{product.category}} </ion-text>
+            </ion-item>
+          </ion-list>
+      </ion-card>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+<!-- <ion-label class="ion-text-center">
+  <ion-button [routerLink]="['/detail']" fill="clear"><b>View all </b></ion-button>
+  </ion-label> -->
